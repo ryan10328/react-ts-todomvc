@@ -1,6 +1,7 @@
 import './App.scss'
 import React from 'react';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 export interface Props {
 
@@ -34,21 +35,7 @@ class App extends React.Component<Props> {
                             </li>
                         </ul>
                     </section>
-                    <footer className="footer">
-                        <span className="todo-count"><strong>0</strong> item left</span>
-                        <ul className="filters">
-                            <li>
-                                <a className="selected" href="#/">All</a>
-                            </li>
-                            <li>
-                                <a href="#/active">Active</a>
-                            </li>
-                            <li>
-                                <a href="#/completed">Completed</a>
-                            </li>
-                        </ul>
-                        <button className="clear-completed">Clear completed</button>
-                    </footer>
+                    <Footer/>
                 </section>
             </div>
         )
