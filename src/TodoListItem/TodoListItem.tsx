@@ -13,7 +13,8 @@ class TodoListItem extends Component<Props> {
                     <label>Taste JavaScript</label>
                     <button className="destroy"></button>
                 </div>
-                <input className="edit" value="Create a TodoMVC template"/>
+                <input className="edit" value="Create a TodoMVC template" onChange={event => {
+                }}/>
             </li>
         )
     }
