@@ -1,5 +1,6 @@
 import './App.scss'
 import React from 'react';
+import Header from './Header/Header';
 
 export interface Props {
 
@@ -10,10 +11,7 @@ class App extends React.Component<Props> {
         return (
             <div className="App">
                 <section className="todoapp">
-                    <header className="header">
-                        <h1>todos</h1>
-                        <input className="new-todo" placeholder="What needs to be done?"/>
-                    </header>
+                    <Header/>
                     <section className="main">
                         <input id="toggle-all" className="toggle-all" type="checkbox"/>
                         <label htmlFor="toggle-all">Mark all as complete</label>
