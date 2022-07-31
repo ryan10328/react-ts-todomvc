@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 export interface Props {
 
 }
 
-class TodoListItem extends React.Component<Props> {
+class TodoListItem extends Component<Props> {
     render() {
         return (
             <li className="completed">

@@ -1,11 +1,10 @@
-import './Header.scss';
-import React from 'react';
+import React, {Component} from 'react';
 
 export interface Props {
 
 }
 
-class Header extends React.Component<Props> {
+class Header extends Component<Props> {
 
     render() {
         return (

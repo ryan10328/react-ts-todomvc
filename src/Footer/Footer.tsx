@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 export interface Props {
 
 }
 
-class Footer extends React.Component<Props> {
+class Footer extends Component<Props> {
+
+
     render() {
         return (
             <footer className="footer">
