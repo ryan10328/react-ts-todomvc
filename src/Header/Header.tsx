@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, Component} from 'react';
+import React, {ChangeEvent, KeyboardEvent, Component, useState} from 'react';
 
 export interface Props {
     handleKeyDown: Function;
@@ -8,46 +8,36 @@ export interface State {
     keyword: string;
 }
 
-
-class Header extends Component<Props, State> {
-
-    constructor(props: Props) {
-        super(props);
-
-    }
-
-    state: State = {
+const Header: React.FC<Props> = (props: Props) => {
+    const [state, setState] = useState<State>({
         keyword: ''
-    };
+    });
 
-    onChange(evt: ChangeEvent<HTMLInputElement>) {
+    const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
         const val = evt.target.value;
-        this.setState({
+        setState({
             keyword: val
-        });
+        })
     }
-
-    onKeyDown(evt: KeyboardEvent<HTMLInputElement>) {
+    const onKeyDown = (evt: KeyboardEvent<HTMLInputElement>) => {
         if (evt.key.toLowerCase() === 'enter') {
-            this.props.handleKeyDown(evt, this.state.keyword);
-            this.setState({
+            props.handleKeyDown(evt, state.keyword);
+            setState({
                 keyword: ''
             });
         }
     }
 
-
-    render() {
-        return (
-            <header className="header">
-                <h1>todos</h1>
-                <input className="new-todo" placeholder="What needs to be done?"
-                       value={this.state.keyword}
-                       onChange={event => this.onChange(event)}
-                       onKeyDown={event => this.onKeyDown(event)}/>
-            </header>
-        )
-    }
+    return (
+        <header className="header">
+            <h1>todos</h1>
+            <input className="new-todo" placeholder="What needs to be done?"
+                   value={state.keyword}
+                   onChange={event => onChange(event)}
+                   onKeyDown={event => onKeyDown(event)}/>
+        </header>
+    )
 }
+
 
 export default Header;
